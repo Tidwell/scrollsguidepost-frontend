@@ -1,7 +1,30 @@
 <div id="sidebar-wrapper" ng-class="{'active': sidebarActive}">
 	<div class="sidebar-nav">
 		<a ng-click="sidebarActive=false" class="btn btn-default btn-lg pull-right"><i class="icon-remove"></i></a>
-		<h2><img src="http://www.scrollsguide.com/app/super_low_res/{{activeCard.image}}.png" /> {{activeCard.name}}</h2>
+		<h2>
+			<img src="http://www.scrollsguide.com/app/super_low_res/{{activeCard.image}}.png" /> {{activeCard.name}}
+		</h2>
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>
+						Buy
+					</th>
+					<th>
+						Sell
+					</th>
+					<th>Pop. (buy/sell)</th>
+					<th>Last Seen</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>{{prettyPrice(activeCard.price.buy)}}</td>
+				<td>{{prettyPrice(activeCard.price.sell)}}</td>
+				<td>{{activeCard.price.buyPop}} / {{activeCard.price.sellPop}}</td>
+				<td>{{dateFormat(activeCard.price.lastseen)}}</td>
+			</tr>
+		</table>
+		<hr />
 		<table class="table table-condensed">
 			<tr ng-repeat="offer in activeCard.price.details" ng-class="{'success': offer.type=='SELL'}">
 				<td>{{prettyOfferType(offer.type)}}</td>
