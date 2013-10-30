@@ -11,8 +11,4 @@ describe('Service: priceDetails', function () {
     priceDetails = _priceDetails_;
   }));
 
-  it('should do something', function () {
-    expect(!!priceDetails).toBe(true);
-  });
-
 });

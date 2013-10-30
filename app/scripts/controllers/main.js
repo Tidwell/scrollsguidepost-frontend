@@ -100,5 +100,20 @@ angular.module('scrollsguidepostFrontendApp')
 			}
 		};
 
+		$scope.cardImageName = function(cardName) {
+			if (!cardName) { return cardName; }
+			return cardName.replace(/ /g, '+');
+		};
+
+		/*TODO this needs to be a directive*/
+		var el = document.getElementsByTagName('body')[0];
+		el.onkeydown = function(evt) {
+			evt = evt || window.event;
+			if (evt.keyCode === 27) {
+				$scope.sidebarActive = false;
+			}
+			$scope.$apply();
+		};
+
 		$scope.$watch('cards.cards + prices.prices + priceDetails.details[1]', aggregate);
 	});

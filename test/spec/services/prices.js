@@ -11,8 +11,4 @@ describe('Service: prices', function () {
     prices = _prices_;
   }));
 
-  it('should do something', function () {
-    expect(!!prices).toBe(true);
-  });
-
 });

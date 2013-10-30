@@ -11,8 +11,4 @@ describe('Service: cards', function () {
     cards = _cards_;
   }));
 
-  it('should do something', function () {
-    expect(!!cards).toBe(true);
-  });
-
 });
