@@ -1,0 +1,56 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+.price-container {
+	margin-top: 100px;
+}
+.price-container tr {
+	cursor: pointer;
+}
+.price-container th a:hover {
+	text-decoration: underline;
+}
+
+/* Side Menu */
+
+#sidebar-wrapper {
+  margin-right: -530px;
+  right: 0;
+  width: 500px;
+  background: rgba(0,0,0,.8);
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  box-shadow: -10px 0px 5px #888888;
+}
+
+#sidebar-wrapper.active {
+  right: 530px;
+  width: 500px;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+#menu-close {
+	cursor: pointer;
+}
+
+#sidebar-wrapper {
+	color: #ccc;
+	padding: 5px;
+}
+
+#sidebar-wrapper tr.success td {
+	background: rgba(0, 255, 20, 0.1);
+}
+
+#sidebar-wrapper tr td {
+	border: none;
+}
