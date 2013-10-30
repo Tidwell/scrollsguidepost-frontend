@@ -6802,3 +6802,24 @@ a.badge:hover {
 	width: 90%;
 	margin: 0 auto;
 }
+
+.rarity-Uncommon {
+	color: #0b81ca;
+}
+.rarity-Rare {
+	color: #bf31da;
+}
+
+.rarity-label {
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	font-size: 1.5em;
+}
+
+.price-container .btn {
+	outline: none;
+}
+.price-container .btn.disabled {
+	cursor: pointer;
+}

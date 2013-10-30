@@ -105,6 +105,27 @@ angular.module('scrollsguidepostFrontendApp')
 			return cardName.replace(/ /g, '+');
 		};
 
+		$scope.rarityToText = function(rarityNum) {
+			return rarityNum === 0 ? 'Common' : rarityNum === 1 ? 'Uncommon' : 'Rare';
+		};
+
+		$scope.rarityClass = function(rarityNum) {
+			return 'rarity-'+$scope.rarityToText(rarityNum);
+		};
+
+		$scope.rarityFilters = {
+			0: true,
+			1: true,
+			2: true
+		};
+		$scope.cardRarity = function(card) {
+			return $scope.rarityFilters[card.rarity];
+		};
+
+		$scope.toggleRarity = function(rarity) {
+			$scope.rarityFilters[rarity] = !$scope.rarityFilters[rarity];
+		};
+
 		/*TODO this needs to be a directive*/
 		var el = document.getElementsByTagName('body')[0];
 		el.onkeydown = function(evt) {

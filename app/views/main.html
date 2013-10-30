@@ -31,6 +31,10 @@
 			<div class="row-fluid">
 				<div class="span4 card">
 					<img ng-src="http://a.scrollsguide.com/image/screen?name={{cardImageName(activeCard.name)}}" />
+					<br />
+					<strong class="rarity-label" ng-class="rarityClass(activeCard.rarity)">
+						{{rarityToText(activeCard.rarity)}}
+					</strong>
 				</div>
 				<div class="span8 offer-table">
 					<table class="table table-condensed">
@@ -53,15 +57,27 @@
 	    <h1>Scrolls Prices</h1>
 	</div>
 	<div class="row-fluid price-container">
-		<form class="form-search">
-		    <input type="text" class="search-query input-block-level" placeholder="Search" ng-model="searchTerm"/>
-		</form>
+		<div class="row-fluid">
+			<div class="span9">
+				<form class="form-search">
+				    <input type="text" class="search-query input-block-level" placeholder="Search" ng-model="searchTerm"/>
+				</form>
+			</div>
+			<div class="span3">
+				<button class="btn rarity-Common" ng-click="toggleRarity(0)" ng-class="{disabled: !rarityFilters[0]}">C</button>
+				<button class="btn rarity-Uncommon" ng-click="toggleRarity(1)" ng-class="{disabled: !rarityFilters[1]}">U</button>
+				<button class="btn rarity-Rare" ng-click="toggleRarity(2)" ng-class="{disabled: !rarityFilters[2]}">R</button>
+			</div>
+		</div>
 		<table class="table table-hover table-condensed table-bordered table-striped">
 			<thead>
 				<tr>
 					<th>Image</th>
 					<th width="30%">
 						<a ng-click="changeSorting('name')">Scroll</a>
+					</th>
+					<th>
+						Rarity
 					</th>
 					<th>
 						<a ng-click="changeSorting('price.buy')">Buy</a>
@@ -73,9 +89,10 @@
 					<th>Last Seen</th>
 				</tr>
 			</thead>
-			<tr ng-repeat="card in allCardData | orderBy:sort.column:sort.descending | filter:{name:searchTerm}" ng-click="details(card)">
+			<tr ng-repeat="card in allCardData | orderBy:sort.column:sort.descending | filter:{name:searchTerm} | filter:cardRarity" ng-click="details(card)">
 				<td><img src="http://www.scrollsguide.com/app/super_low_res/{{card.image}}.png" /></td>
 				<td width="30%">{{card.name}}</td>
+				<td ng-class="rarityClass(card.rarity)">{{rarityToText(card.rarity)}}</td>
 				<td>{{prettyPrice(card.price.buy)}}</td>
 				<td>{{prettyPrice(card.price.sell)}}</td>
 				<td>{{card.price.buyPop}} / {{card.price.sellPop}}</td>
