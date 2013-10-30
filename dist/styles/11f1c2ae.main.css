@@ -6823,3 +6823,6 @@ a.badge:hover {
 .price-container .btn.disabled {
 	cursor: pointer;
 }
+.price-container .btn img {
+	height: 18px;
+}

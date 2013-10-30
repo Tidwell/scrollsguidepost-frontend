@@ -126,6 +126,21 @@ angular.module('scrollsguidepostFrontendApp')
 			$scope.rarityFilters[rarity] = !$scope.rarityFilters[rarity];
 		};
 
+		$scope.factionFilters = {
+			decay: true,
+			order: true,
+			growth: true,
+			energy: true
+		};
+		$scope.cardFaction = function(card) {
+			var faction = card.costorder ? 'order' : card.costgrowth ? 'growth' : card.costenergy ? 'energy' : 'decay';
+			return $scope.factionFilters[faction];
+		};
+
+		$scope.toggleFaction = function(faction) {
+			$scope.factionFilters[faction] = !$scope.factionFilters[faction];
+		};
+
 		/*TODO this needs to be a directive*/
 		var el = document.getElementsByTagName('body')[0];
 		el.onkeydown = function(evt) {
