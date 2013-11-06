@@ -47,12 +47,12 @@ angular.module('scrollsguidepostFrontendApp')
 			var mins = secondsAgo / 60;
 			if (mins > 60) {
 				var hrs = mins / 60;
-				return Math.round(hrs) + (Math.round(hrs) === 1 ? ' hour ago' : ' hours ago');
+				return (Math.round(hrs) + (Math.round(hrs) === 1 ? ' <span class="hidden-phone">hour ago</span>' : ' <span class="hidden-phone">hours ago</span>') + '<span class="visible-phone">hr</span>');
 			} else {
 				if (mins < 1) {
-					return 'moments ago';
+					return ' <span class="hidden-phone">moments ago</span><span class="visible-phone">just now</span>';
 				}
-				return Math.round(mins) + ' minutes ago';
+				return Math.round(mins) + ' <span class="hidden-phone">minutes ago</span><span class="visible-phone">min</span>';
 			}
 		};
 
