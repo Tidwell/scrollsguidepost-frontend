@@ -254,6 +254,7 @@ module.exports = function (grunt) {
             'components/**/*',
             'images/{,*/}*.{gif,webp}',
             'styles/fonts/*',
+            'styles-themes/*',
             'dummy-data/*',
             'img/**/*'
           ]

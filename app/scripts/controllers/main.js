@@ -151,5 +151,10 @@ angular.module('scrollsguidepostFrontendApp')
 			$scope.$apply();
 		};
 
+		$scope.theme = function(theme) {
+			var $ = window.$;
+			$('#theme-stylesheet').attr('href', '/styles-themes/theme-'+theme+'.css');
+		};
+
 		$scope.$watch('cards.cards + prices.prices + priceDetails.details[1]', aggregate);
 	});

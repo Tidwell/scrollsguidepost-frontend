@@ -1,0 +1,88 @@
+body .bg-container {
+	background: url(/img/order.jpg) no-repeat center center fixed; 
+}
+
+h1 {
+	background: -webkit-linear-gradient(rgba(52, 55, 92, 1), rgba(170, 170, 200, 1));
+	-webkit-background-clip: text;
+}
+
+form.form-search input {
+	background: rgba(0, 4, 22, .5);
+	border: rgba(0, 4, 22, .8);
+	color: white;
+}
+button.btn {
+	background: rgba(0, 4, 22, 1);
+	border: rgba(0, 4, 22, 1);
+	color: white;
+}
+
+form.form-search input:active,
+form.form-search input:focus {
+	background: rgba(0, 4, 22, 1);
+	border: rgba(0, 4, 22, 1);
+	color: white;
+}
+
+button.btn:focus,
+button.btn:hover {
+	background: rgba(0, 4, 22, .9);
+	border: rgba(0, 4, 22, .9);
+	color: white;
+}
+button.btn.disabled {
+	background: rgba(0, 4, 22, .8);
+	border: rgba(0, 4, 22, .8);
+	color: white;
+}
+
+button.btn {
+	color: #ccc;
+}
+form.form-search input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #ccc;
+}
+form.form-search input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #ccc;
+}
+form.form-search input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #ccc;
+}
+form.form-search input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #ccc;
+}
+
+.table-striped {
+	color: #3d3d3d;
+}
+
+.table-striped tbody tr:nth-child(even) td,
+.table-striped tbody tr:nth-child(even) th {
+	background-color: rgba(212, 215, 252, 0.6);
+}
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+	background-color: rgba(234, 235, 252, 0.5);
+}
+
+.price-container table {
+	background-color: rgba(200,200,200,.6);
+}
+
+table.table-striped td,
+table.table-striped tr,
+table.table-striped th,
+table.table-striped {
+	border-color: rgba(11, 17, 94, .5);
+}
+
+#sidebar-wrapper {
+	background: rgba(0,0,0,.99);
+	box-shadow: -10px 0px 35px #3d3d3d;
+	color: white;
+}
+
+#sidebar-wrapper tr.success td {
+	background-color: rgba(130,130,180,.3);
+}
