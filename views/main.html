@@ -24,7 +24,9 @@
 					<td>{{prettyPrice(activeCard.price.buy)}}</td>
 					<td>{{prettyPrice(activeCard.price.sell)}}</td>
 					<td>{{activeCard.price.buyPop}} / {{activeCard.price.sellPop}}</td>
-					<td>{{dateFormat(activeCard.price.lastseen)}}</td>
+					<td>
+						<span ng-bind-html-unsafe="dateFormat(activeCard.price.lastseen)"></span>
+					</td>
 				</tr>
 			</table>
 			<hr>
@@ -36,15 +38,29 @@
 						{{rarityToText(activeCard.rarity)}}
 					</strong>
 				</div>
+				<hr class="visible-phone">
+				<div class="key visible-phone">
+					B = buying / S = selling
+					<br><br>
+				</div>
 				<div class="span8 offer-table">
 					<table class="table table-condensed">
-						<tr ng-repeat="offer in activeCard.price.details" ng-class="{'success': offer.type=='SELL'}">
-							<td>{{prettyOfferType(offer.type)}}</td>
-							<td><a href="http://www.scrollsguide.com/ranking/player/{{offer.user}}">{{offer.user}}</a></td>
-							<td>{{offer.room}}</td>
-							<td>{{prettyOfferPrice(offer.price)}}</td>
-							<td>{{dateFormat(offer.time)}}</td>
-						</tr>
+						<tbody>
+							<tr ng-repeat="offer in activeCard.price.details" ng-class="{'success': offer.type=='SELL'}">
+								<td>
+									<span class="hidden-phone">
+										{{prettyOfferType(offer.type)}}
+									</span>
+									<span class="small-phone visible-phone">{{prettyOfferType(offer.type)[0].toUpperCase()}}</span>
+								</td>
+								<td><a href="http://www.scrollsguide.com/ranking/player/{{offer.user}}">{{offer.user}}</a></td>
+								<td class="hidden-phone">{{offer.room}}</td>
+								<td>{{prettyOfferPrice(offer.price)}}</td>
+								<td>
+									<span ng-bind-html-unsafe="dateFormat(offer.time)"></span>
+								</td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>
@@ -58,18 +74,20 @@
 	</div>
 	<div class="row-fluid price-container">
 		<div class="row-fluid">
-			<div class="span7">
+			<div class="span6">
 				<form class="form-search">
 				    <input type="text" class="search-query input-block-level" placeholder="Search" ng-model="searchTerm">
 				</form>
 			</div>
-			<div class="span2">
+			<div class="span6 filter-btns">
 				<button class="btn rarity-Common" ng-click="toggleRarity(0)" ng-class="{disabled: !rarityFilters[0]}">C</button>
 				<button class="btn rarity-Uncommon" ng-click="toggleRarity(1)" ng-class="{disabled: !rarityFilters[1]}">U</button>
 				<button class="btn rarity-Rare" ng-click="toggleRarity(2)" ng-class="{disabled: !rarityFilters[2]}">R</button>
-			</div>
-			<div class="span3">
-				<button class="btn" ng-click="toggleFaction('order')" ng-class="{disabled: !factionFilters['order']}">
+
+				<br class="small-phone">
+				<br class="small-phone">
+
+				<button class="btn first-faction" ng-click="toggleFaction('order')" ng-class="{disabled: !factionFilters['order']}">
 					<img src="/img/card-icons/order.png">
 				</button>
 				<button class="btn" ng-click="toggleFaction('growth')" ng-class="{disabled: !factionFilters['growth']}">
@@ -83,15 +101,16 @@
 				</button>
 			</div>
 		</div>
+		<hr class="visible-phone">
 		<table class="table table-hover table-condensed table-bordered table-striped">
 			<thead>
 				<tr>
-					<th>Image</th>
-					<th width="30%">
+					<th class="img">Image</th>
+					<th>
 						<a ng-click="changeSorting('name')">Scroll</a>
 					</th>
 					<th>
-						<a ng-click="changeSorting('rarity')">Rarity</a>
+						<a ng-click="changeSorting('rarity')"><span class="hidden-phone">Rarity</span><span class="visible-phone">Rty</span></a>
 					</th>
 					<th>
 						<a ng-click="changeSorting('price.buy')">Buy</a>
@@ -99,18 +118,20 @@
 					<th>
 						<a ng-click="changeSorting('price.sell')">Sell</a>
 					</th>
-					<th>Pop. (buy/sell)</th>
-					<th>Last Seen</th>
+					<th class="pop hidden-phone">Pop. (buy/sell)</th>
+					<th class="hidden-phone">Last Seen</th>
 				</tr>
 			</thead>
 			<tr ng-repeat="card in allCardData | orderBy:sort.column:sort.descending | filter:{name:searchTerm} | filter:cardRarity | filter:cardFaction" ng-click="details(card)">
-				<td><img src="http://www.scrollsguide.com/app/super_low_res/{{card.image}}.png"></td>
-				<td width="30%">{{card.name}}</td>
-				<td ng-class="rarityClass(card.rarity)">{{rarityToText(card.rarity)}}</td>
+				<td class="img"><img src="http://www.scrollsguide.com/app/super_low_res/{{card.image}}.png"></td>
+				<td>{{card.name}}</td>
+				<td ng-class="rarityClass(card.rarity)"><span class="hidden-phone">{{rarityToText(card.rarity)}}</span><span class="visible-phone">{{rarityToText(card.rarity)[0]}}</span></td>
 				<td>{{prettyPrice(card.price.buy)}}</td>
 				<td>{{prettyPrice(card.price.sell)}}</td>
-				<td>{{card.price.buyPop}} / {{card.price.sellPop}}</td>
-				<td>{{dateFormat(card.price.lastseen)}}</td>
+				<td class="pop hidden-phone">{{card.price.buyPop}} / {{card.price.sellPop}}</td>
+				<td class="hidden-phone">
+					<span ng-bind-html-unsafe="dateFormat(card.price.lastseen)"></span>
+				</td>
 			</tr>
 		</table>
 	</div>
