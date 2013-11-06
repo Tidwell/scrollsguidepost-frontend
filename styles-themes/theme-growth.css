@@ -1,0 +1,88 @@
+body .bg-container {
+	background: url(/img/growth.jpg) no-repeat center center fixed; 
+}
+
+h1 {
+	background: -webkit-linear-gradient(rgba(52, 92, 54, 1), rgba(176, 200, 170, 1));
+	-webkit-background-clip: text;
+}
+
+form.form-search input {
+	background: rgba(0, 22, 1, 0.5);
+	border: rgba(2, 22, 0, 0.8);
+	color: white;
+}
+button.btn {
+	background: rgba(0, 22, 4, 1);
+	border: rgba(0, 22, 2, 1);
+	color: white;
+}
+
+form.form-search input:active,
+form.form-search input:focus {
+	background: rgba(4, 22, 0, 1);
+	border: rgba(4, 22, 0, 1);
+	color: white;
+}
+
+button.btn:focus,
+button.btn:hover {
+	background: rgba(4, 22, 0, .9);
+	border: rgba(4, 22, 0, .9);
+	color: white;
+}
+button.btn.disabled {
+	background: rgba(0, 22, 0, .8);
+	border: rgba(0, 22, 0, .8);
+	color: white;
+}
+
+button.btn {
+	color: #ccc;
+}
+form.form-search input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #ccc;
+}
+form.form-search input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #ccc;
+}
+form.form-search input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #ccc;
+}
+form.form-search input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #ccc;
+}
+
+.table-striped {
+	color: #3d3d3d;
+}
+
+.table-striped tbody tr:nth-child(even) td,
+.table-striped tbody tr:nth-child(even) th {
+	background-color: rgba(212, 255, 212, 0.6);
+}
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+	background-color: rgba(180, 200, 180, 0.5);
+}
+
+.price-container table {
+	background-color: rgba(134, 255, 132, 0.3);
+}
+
+table.table-striped td,
+table.table-striped tr,
+table.table-striped th,
+table.table-striped {
+	border-color: rgba(11, 94, 11, 0.5);
+}
+
+#sidebar-wrapper {
+	background: rgba(0,0,0,.99);
+	box-shadow: -10px 0px 35px #3d3d3d;
+	color: white;
+}
+
+#sidebar-wrapper tr.success td {
+	background-color: rgba(130,180,130,.3);
+}
