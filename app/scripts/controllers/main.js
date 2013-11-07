@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('scrollsguidepostFrontendApp')
-	.controller('MainCtrl', function($scope, cards, prices, priceDetails) {
+	.controller('MainCtrl', function($scope, cards, prices, priceDetails, $cookies) {
 		$scope.cards = cards.get();
 		$scope.prices = prices.get();
 		$scope.priceDetails = priceDetails.get();
@@ -159,10 +159,13 @@ angular.module('scrollsguidepostFrontendApp')
 		};
 
 		$scope.theme = function(theme) {
+			if (!theme) { return; }
 			var $ = window.$;
 			$('.bg-container').removeAttr('style');
 			$('#theme-stylesheet').attr('href', '/styles-themes/theme-'+theme+'.css');
+			$cookies.theme = theme;
 		};
+		$scope.theme($cookies.theme);
 
 		$scope.$watch('cards.cards + prices.prices + priceDetails.details[1]', aggregate);
 	});
