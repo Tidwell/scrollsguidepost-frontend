@@ -67,7 +67,7 @@ form.form-search input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 
 .price-container table {
-	background-color: rgba(250, 250, 217, 0.5);
+	background-color: rgba(250, 250, 217, 0.8);
 }
 
 table.table-striped td,
