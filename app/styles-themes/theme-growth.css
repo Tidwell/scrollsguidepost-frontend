@@ -3,7 +3,7 @@ body .bg-container {
 }
 
 h1 {
-	background: -webkit-linear-gradient(rgba(52, 92, 54, 1), rgba(176, 200, 170, 1));
+	background: -webkit-linear-gradient(rgba(176, 200, 170, 1), rgba(0, 0, 0, 1));
 	-webkit-background-clip: text;
 }
 
@@ -59,7 +59,7 @@ form.form-search input:-ms-input-placeholder { /* Internet Explorer 10+ */
 
 .table-striped tbody tr:nth-child(even) td,
 .table-striped tbody tr:nth-child(even) th {
-	background-color: rgba(212, 255, 212, 0.6);
+	background-color: rgba(153, 184, 153, 0.6);
 }
 .table-striped tbody tr:nth-child(odd) td,
 .table-striped tbody tr:nth-child(odd) th {
@@ -67,7 +67,7 @@ form.form-search input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 
 .price-container table {
-	background-color: rgba(134, 255, 132, 0.3);
+	background-color: rgba(241, 255, 240, 0.8);
 }
 
 table.table-striped td,

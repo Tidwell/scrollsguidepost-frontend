@@ -3,7 +3,7 @@ body .bg-container {
 }
 
 h1 {
-	background: -webkit-linear-gradient(rgba(52, 55, 92, 1), rgba(170, 170, 200, 1));
+	background: -webkit-linear-gradient(rgba(170, 170, 200, 1), rgba(0, 0, 0, 1));
 	-webkit-background-clip: text;
 }
 
@@ -67,7 +67,7 @@ form.form-search input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 
 .price-container table {
-	background-color: rgba(200,200,200,.6);
+	background-color: rgba(200,200,200,.8);
 }
 
 table.table-striped td,
