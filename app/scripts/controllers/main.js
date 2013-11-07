@@ -160,6 +160,7 @@ angular.module('scrollsguidepostFrontendApp')
 
 		$scope.theme = function(theme) {
 			var $ = window.$;
+			$('.bg-container').removeAttr('style');
 			$('#theme-stylesheet').attr('href', '/styles-themes/theme-'+theme+'.css');
 		};
 
