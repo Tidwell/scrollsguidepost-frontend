@@ -165,7 +165,7 @@ angular.module('scrollsguidepostFrontendApp')
 			$('#theme-stylesheet').attr('href', '/styles-themes/theme-'+theme+'.css');
 			$cookies.theme = theme;
 		};
-		$scope.theme($cookies.theme);
+		$scope.theme($cookies.theme || 'order');
 
 		$scope.$watch('cards.cards + prices.prices + priceDetails.details[1]', aggregate);
 	});
