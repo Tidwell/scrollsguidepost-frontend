@@ -6892,3 +6892,8 @@ body div.btn-group {
 	right: 10px;
 	z-index: 500;
 }
+
+footer {
+  color: white;
+  text-shadow: 2px 2px 2px #3d3d3d;
+}
