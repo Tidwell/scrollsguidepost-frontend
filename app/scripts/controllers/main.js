@@ -151,6 +151,13 @@ angular.module('scrollsguidepostFrontendApp')
 			$scope.$apply();
 		};
 
+		//fix for chrome dissapearing background bug
+		//see http://stackoverflow.com/questions/9275802/css-background-image-disappearing-in-chrome
+		window.onfocus = function() {
+			var $ = window.$;
+			$('.bg-container').css('background-image', $('.bg-container').css('background-image'));
+		};
+
 		$scope.theme = function(theme) {
 			var $ = window.$;
 			$('#theme-stylesheet').attr('href', '/styles-themes/theme-'+theme+'.css');
