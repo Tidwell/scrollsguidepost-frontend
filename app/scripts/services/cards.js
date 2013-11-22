@@ -8,8 +8,9 @@ angular.module('scrollsguidepostFrontendApp')
 
 		return {
 			get: function() {
+				delete $http.defaults.headers.common['X-Requested-With'];
 				if (!cards.cards.length) {
-					$http({method: 'GET', url: 'dummy-data/cards.json'}).success(function(data){
+					$http({method: 'GET', url: 'http://a.scrollsguide.com/scrolls'}).success(function(data){
 						cards.cards = data.data;
 					});
 				}
