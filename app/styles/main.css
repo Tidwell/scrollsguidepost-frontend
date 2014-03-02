@@ -106,7 +106,9 @@ table.table-striped td.pop {
 	width: 90%;
 	margin: 0 auto;
 }
-
+#sidebar-wrapper .flyout-container .card-image {
+	display: inline-block;
+}
 .rarity-Uncommon {
 	color: #0b81ca;
 }
@@ -149,4 +151,10 @@ body div.btn-group {
 footer {
   color: white;
   text-shadow: 2px 2px 2px #3d3d3d;
+}
+
+.card-image {
+	background-image: url(http://www.scrollsguide.com/app/super_low_res/sheet.png);
+	width: 40px;
+	height: 30px;
 }

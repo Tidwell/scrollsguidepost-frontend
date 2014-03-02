@@ -21,7 +21,7 @@
 		</a>
 		<div class="flyout-container">
 			<h2>
-				<img src="http://www.scrollsguide.com/app/super_low_res/{{activeCard.image}}.png" />
+				<div class="card-image" id="simg-{{activeCard.image}}"></div>
 				{{activeCard.name}}
 			</h2>
 			<table class="table table-condensed">
@@ -138,7 +138,7 @@
 			</thead>
 			<tr ng-repeat="card in allCardData | orderBy:sort.column:sort.descending | filter:{name:searchTerm} | filter:cardRarity | filter:cardFaction" ng-click="details(card)">
 				<td class="img">
-					<img src="http://www.scrollsguide.com/app/super_low_res/{{card.image}}.png" />
+					<div class="card-image" id="simg-{{card.image}}"></div>
 				</td>
 				<td>{{card.name}}</td>
 				<td ng-class="rarityClass(card.rarity)">
