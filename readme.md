@@ -18,5 +18,5 @@ Development
 
 Production
 ----------
-  * Production should use the build branch ```git checkout build``` - this can be placed in any static file server and should work correctly
+  * Production should use the build branch ```git checkout build``` - this can be placed in any static file server and should work correctly (this will match the dist folder, so alternatively that can just be copied manually to the production server if git is not on prod)
 
